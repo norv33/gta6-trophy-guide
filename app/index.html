@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI (PS5)</title>
+<meta name="description" content="Offline guide and tracker for all 55 Grand Theft Auto VI PlayStation 5 trophies: official names, descriptions and grades, a platinum roadmap, missable warnings, and a cited guide for every trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; Offline guide &amp; tracker</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="subtitle">All 55 trophies — 1 platinum, 2 gold, 6 silver, 46 bronze. No online trophies. Official names, descriptions and grades; every guide cites its sources.</p>
+    <div class="progress-wrap" aria-label="Overall progress">
+      <div class="progress-line"><span id="progressText">0 of 55 earned</span><span id="progressPct">0%</span></div>
+      <div class="progress-bar"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
+      <div class="grade-chips" id="gradeChips"></div>
+    </div>
+  </div>
+</header>
+
+<div class="warn" role="note">
+  <strong>Before you play:</strong> GTA VI has <strong>no mission replay</strong> and no New Game Plus — keep a <strong>manual save at the start of every chapter</strong> and one before the final mission. <strong>Cheats disable trophies</strong> and saving. One trophy is missable: <strong>Positive Mental Attitude</strong> (meditate at Lucia&rsquo;s balcony spot in Chapter 1 before that chapter ends).
+</div>
+
+<nav class="tabs" aria-label="Sections">
+  <button type="button" id="tabChecklist" class="tab active" data-view="checklist">Checklist</button>
+  <button type="button" id="tabRoadmap" class="tab" data-view="roadmap">Platinum roadmap</button>
+  <button type="button" id="tabMissable" class="tab" data-view="missable">Missables &amp; warnings</button>
+  <button type="button" id="tabAbout" class="tab" data-view="about">Sources &amp; honesty</button>
+</nav>
+
+<main>
+  <section id="view-checklist" class="view">
+    <div class="controls">
+      <label class="ctl">Search
+        <input id="search" type="search" placeholder="Trophy name or description…" autocomplete="off">
+      </label>
+      <label class="ctl">Grade
+        <select id="gradeFilter">
+          <option value="all">All grades</option>
+          <option value="platinum">Platinum</option>
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value="bronze">Bronze</option>
+        </select>
+      </label>
+      <label class="ctl">Kind
+        <select id="kindFilter">
+          <option value="all">All kinds</option>
+          <option value="story">Story</option>
+          <option value="missable">Missable</option>
+          <option value="collectible">Collectibles</option>
+          <option value="activity">Activities</option>
+          <option value="completion">Completion</option>
+        </select>
+      </label>
+      <label class="ctl">Status
+        <select id="statusFilter">
+          <option value="all">All</option>
+          <option value="earned">Earned</option>
+          <option value="todo">Not earned yet</option>
+        </select>
+      </label>
+      <label class="ctl toggle">
+        <input id="spoilerToggle" type="checkbox" checked>
+        <span>Hide story spoilers until earned</span>
+      </label>
+      <div class="ctl buttons">
+        <button id="exportBtn" type="button">Export progress</button>
+        <button id="importBtn" type="button">Import progress</button>
+        <input id="importFile" type="file" accept="application/json,.json" hidden>
+        <button id="resetBtn" type="button" class="danger">Reset</button>
+      </div>
+    </div>
+    <p id="listCount" class="list-count" aria-live="polite"></p>
+    <ol id="trophyList" class="trophy-list"></ol>
+    <p id="emptyNote" class="empty-note" hidden>No trophies match these filters.</p>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <h2>Roadmap to the platinum</h2>
+    <p class="lede">Five stages, in the order to play them. Story trophies stay hidden here too while the spoiler setting is on — tick them off in the checklist and their names appear.</p>
+    <ol id="roadmapStages" class="roadmap"></ol>
+  </section>
+
+  <section id="view-missable" class="view" hidden>
+    <h2>Missables &amp; warnings</h2>
+    <div id="missableList" class="missable-list"></div>
+    <h3>Rules that protect your run</h3>
+    <ul class="rules-list">
+      <li><strong>Manual saves.</strong> Save at the start of every chapter and before the final mission. There is no mission replay, so a chapter-start save is the only way back.</li>
+      <li><strong>No cheats on your trophy save.</strong> Turning on a cheat disables trophies and saving, according to PowerPyx via GTABase.</li>
+      <li><strong>One playthrough is enough.</strong> Every trophy is single-player and offline; nothing in the list needs online play, a difficulty setting, or a second run.</li>
+      <li><strong>Choices count.</strong> &ldquo;Actions Speak Louder&rdquo; tracks choices you make (PlayStation tracks a count toward 500), so choose actively instead of always taking the default — skipped choices cannot be re-made.</li>
+      <li><strong>Unconfirmed means unconfirmed.</strong> A few trophies had no confirmed unlock method at launch (see the honesty tab). Do not grind for them blindly; check a current community guide first.</li>
+    </ul>
+  </section>
+
+  <section id="view-about" class="view" hidden>
+    <h2>Sources &amp; honesty</h2>
+    <p class="lede">What this guide is built on, and what it does not know yet.</p>
+    <ul class="sources-list" id="sourcesList"></ul>
+    <h3>What is verified</h3>
+    <ul class="rules-list">
+      <li>All 55 names, descriptions and grades are the official PlayStation 5 list as reported 18 Nov 2026 — Exophase and PSNProfiles agree on every entry.</li>
+      <li>28 of the 55 are hidden on PlayStation until earned; all 55 are single-player, with no online trophies.</li>
+      <li>Counts PlayStation tracks (42 Shooting Range challenges, 14 drone race locations, 18 meditation spots, 52 areas, 9 gangs, 8 garages) come from the official list data.</li>
+    </ul>
+    <h3>What is not verified yet</h3>
+    <ul class="rules-list">
+      <li>The game released 19 Nov 2026, so step-by-step methods for a few trophies had no confirmed source at launch: <em>In The Beginning&hellip;</em>, <em>Capital Offense</em>, <em>Bad Luck, I Guess</em>, <em>The Truth Is Out There</em> and <em>Ten Pin</em>, plus <em>Challenging Tank</em>, <em>Personal Best</em> and <em>Actions Speak Louder</em>. Their guides say so plainly instead of inventing a method.</li>
+      <li>Only one trophy is flagged missable by the sources (Positive Mental Attitude); whether any other trophy can be missed is still unconfirmed, so the roadmap tells you to keep chapter-start saves rather than promise that nothing else can be missed.</li>
+      <li>Guide text is written in our own words for this page. It draws on the sources listed above and cites them per trophy; it never copies another guide&rsquo;s text.</li>
+    </ul>
+    <p class="fineprint">Unofficial fan guide. Not affiliated with Rockstar Games, Take-Two Interactive, Sony Interactive Entertainment, or PlayStation. No Rockstar logo, artwork, or game screenshots are used. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Works fully offline: it loads nothing from the network.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Leonida Trophy Guide — an unofficial offline guide for GTA VI on PS5. Progress is saved in your browser (localStorage) and never leaves your device. Export it to keep a backup.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
